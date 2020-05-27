@@ -23,7 +23,11 @@ const Grid = (props) => {
     return prevGrid.map(r => {
       return r.map(cell => {
         if(cell.row == row && cell.column == col){
-          return {...cell, [key]:val}          
+          if(val <= 5){
+            return {...cell, [key]:val}          
+          } else {
+            return {...cell, [key]:1}
+          }
         } else {
           return cell;
         }
